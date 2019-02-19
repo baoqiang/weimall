@@ -1,0 +1,69 @@
+<view class="container">
+  <button class="userinfo" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+		<image wx:if="{{userInfo && userInfo.avatarUrl}}" class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+		<text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+	</button>
+  <view style="height:20rpx;background: #eee;width:100%;"></view>
+  <view class="my-item" style='background:none;display:flex;flex-direction:column;height:auto;'></view>
+  
+  <view class="user-menu">
+    <view class="item">
+      <navigator url="/pages/ucenter/order/order" class="a">
+        <text class="icon order"></text>
+        <text class="txt">我的订单</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="/pages/ucenter/coupon/coupon" class="a">
+        <text class="icon coupon"></text>
+        <text class="txt">优惠券</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="/pages/ucenter/collect/collect" class="a">
+        <text class="icon address"></text>
+        <text class="txt">我的收藏</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="/pages/ucenter/footprint/footprint" class="a">
+        <text class="icon security"></text>
+        <text class="txt">我的足迹</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="../address/address" class="a">
+        <text class="icon address"></text>
+        <text class="txt">地址管理</text>
+      </navigator>
+    </view>
+    <button class='service' open-type="contact">
+      <view class="item no-border">
+        <navigator url="url" class="a">
+          <text class="icon kefu"></text>
+          <text class="txt">联系客服</text>
+        </navigator>
+      </view>
+    </button>
+    <view class="item item-bottom">
+      <navigator url="/pages/ucenter/help/help" class="a">
+        <text class="icon help"></text>
+        <text class="txt">帮助中心</text>
+      </navigator>
+    </view>
+    <view class="item item-bottom">
+      <navigator url="/pages/ucenter/feedback/feedback" class="a">
+        <text class="icon feedback"></text>
+        <text class="txt">意见反馈</text>
+      </navigator>
+    </view>
+    <view class="item item-bottom" v-if="hasMobile != ''">
+      <navigator url="/pages/auth/mobile/mobile" class="a">
+        <text class="icon phone"></text>
+        <text class="txt">绑定手机</text>
+      </navigator>
+    </view>
+  </view>
+  <view class='company'>由小微软件工作室提供技术支持</view>
+  <!--<view class="logout" bindtap="exitLogin">退出登录</view>-->
+</view>
